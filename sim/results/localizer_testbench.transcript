@@ -1,0 +1,31 @@
+Reading /opt/modeltech/tcl/vsim/pref.tcl 
+
+# 10.1b_2
+
+proc start {m} {vsim -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip work.glbl $m}
+set MODULE localizer_testbench
+# localizer_testbench
+start $MODULE
+# vsim -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip work.glbl localizer_testbench 
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 10.1b_2 Jul  3 2012 Linux 2.6.32-279.5.1.el6.centos.plus.x86_64
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.glbl(fast)
+# Loading work.localizer_testbench(fast)
+# Loading work.localizer_2(fast)
+add wave $MODULE/*
+add wave $MODULE/localizer_test/*
+run 10000us
+# 
+# 
+# STARTING ALL TESTS
+####################################ERROR WITHIN 10 PERCENT######################################
+# PASS    DUTout[0]:                  227884203, REFout[0]:                  234881024
+# PASS    DUTout[1]:                  146510841, REFout[1]:                  150994944

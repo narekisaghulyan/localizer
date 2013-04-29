@@ -1,0 +1,72 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/cc/cs150/sp13/class/cs150-ad/localizer/sim/build
+T_opt
+VDLn?oM5UlPaCTed:4n>aI1
+04 4 4 work glbl fast 0
+04 19 4 work localizer_testbench fast 0
+=1-00123f7537e3-517e27a0-9033e-3ca7
+o-quiet -auto_acc_if_foreign -work work -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip
+n@_opt
+OL;O;10.1b_2;51
+vglbl
+Ie=ZS6Q:jeXZ[e[Y1P@?F90
+VM[9mS]S:KA1i4VeCMX35[3
+Z1 d/home/cc/cs150/sp13/class/cs150-ad/localizer/sim/build
+w1335236620
+8/opt/Xilinx/14.1/ISE_DS/ISE/verilog/src/glbl.v
+F/opt/Xilinx/14.1/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+Z2 OL;L;10.1b_2;51
+r1
+31
+Z3 o+acc -source -nocovercells -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 7J1niELK7Y2aOLFBHZ9413
+!s108 1367222175.269979
+!s107 /opt/Xilinx/14.1/ISE_DS/ISE/verilog/src/glbl.v|
+!s90 +acc|-vopt|-source|-nocovercells|/opt/Xilinx/14.1/ISE_DS/ISE/verilog/src/glbl.v|
+Z4 !s102 -nocovercells
+!i10b 1
+!s85 0
+vlocalizer_2
+IFk6Z3d6N<nz_aEO6XchUh0
+V?eIQhFUzKeme]mEkbB_Ob0
+R1
+w1367220934
+8../../src/localizer_2.v
+F../../src/localizer_2.v
+L0 5
+R2
+r1
+31
+R4
+R3
+Z5 !s92 +acc -source -nocovercells +incdir+../../src -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 _@4EWQJX:KUSkH@Lkj?<T3
+!s85 0
+!s108 1367222175.489672
+!s107 ../../src/localizer_2.v|
+!s90 +acc|-vopt|-source|-nocovercells|+incdir+../../src|../../src/localizer_2.v|
+vlocalizer_testbench
+IXTHV5CaPAieYJi6KS>M2P2
+V<mVg<6^f[cijHK0eC;k;F1
+R1
+w1367222166
+8../../src/localizer_testbench.v
+F../../src/localizer_testbench.v
+L0 5
+R2
+r1
+31
+R4
+R3
+!s100 >QzBXjC4VMB1FBAbQZaWU2
+!s108 1367222175.373931
+!s107 ../../src/localizer_testbench.v|
+!s90 +acc|-vopt|-source|-nocovercells|+incdir+../../src|../../src/localizer_testbench.v|
+R5
+!i10b 1
+!s85 0
