@@ -15,11 +15,11 @@ module localizer_testbench();
     always #(Halfcycle) Clock = ~Clock;
 
    //Registers and wires to test the localizer
-   reg signed  [83:0] REFout [0:1];
-   wire signed [83:0] DUTout [0:1];
-   reg signed [33:0] tau1;
-   reg signed [33:0] tau2;
-   reg signed [33:0] tau3;
+   reg signed  [90:0] REFout [0:1];
+   wire signed [90:0] DUTout [0:1];
+   reg signed [34:0] tau1;
+   reg signed [34:0] tau2;
+   reg signed [34:0] tau3;
    reg signed [23:0] TEMPout [0:1];
    
    wire [23:0]	     testing;
@@ -45,7 +45,7 @@ module localizer_testbench();
    
    
    //this is where the modules being tested are instanatiated.
-   localizer_2 localizer_test(.tau1(tau1), .tau2(tau2), .tau3(tau3), .posx(DUTout[0]), .posy(DUTout[1]),.testing(testing));
+   localizer_2 localizer_test(.tau1(tau1), .tau2(tau2), .tau3(tau3), .posx(DUTout[0]), .posy(DUTout[1]));
 
   
   
@@ -56,14 +56,14 @@ module localizer_testbench();
       
     #10;
    
-      tau1 = -7571;
-      tau2 = -10898; //-6.48*(10**(-4));
-      tau3 = -6624;//-2.07*(10**(-4));
+      tau1 = -16952;
+      tau2 = -22290; //-6.48*(10**(-4));
+      tau3 = -10618;//-2.07*(10**(-4));
    #100;
     
       
-      REFout[0] = $floor(14*16777216);   //14
-      REFout[1] = $floor(9*16777216);   //9
+      REFout[0] = $floor(11*33554432);   //11
+      REFout[1] = $floor(12*33554432);   //12
        
       #10;
       checkOutput();

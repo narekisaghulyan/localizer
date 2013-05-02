@@ -22,7 +22,7 @@ $(WORK__glbl) : /opt/Xilinx/14.1/ISE_DS/ISE/verilog/src/glbl.v
 
 $(WORK__localizer_2) \
 $(WORK__localizer_testbench) : ../../src/localizer_testbench.v ../../src/localizer_2.v
-	$(VLOG) +acc -source -nocovercells +incdir+../../src \
+	$(VLOG) +acc -source -nocovercells +incdir+../../src+incdir+../../src/LocalizeMicSwap \
 		 -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF ../../src/localizer_testbench.v \
 		 ../../src/localizer_2.v
 

@@ -2,7 +2,7 @@
 
 % positions of mic 1,2,3
 % mic 0 at origin: <0,0>
-s=2^24;
+s=2^25;
 
 x1   =  0.08;   y1   = .16;
 x2   = .16;  y2   = .16;
@@ -24,11 +24,11 @@ sv = v;
 % tau > 0 if an acoustic source reaches p0 earlier than pm
 % tau is in s
 taum =  @(m,x,y) (...
-    sqrt( (P(m,1)-x)^2 + (P(m,2)-y)^2) - ...
+    sqrt( (P(m,1)-x)^2 + (P(m,2)-y)^2 ) - ...
     sqrt( x^2 + y^2 )) / v;
 
 % acoustic location
-A = [14, 9];
+A = [12, 17];
 sA = s*A;
 
 tau = [ taum(1, A(X), A(Y)),    ...

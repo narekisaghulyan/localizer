@@ -3,44 +3,42 @@
 //outputs:the position of the acoustic source <x,y>
 
 module localizer_2(
-   input signed [33:0] tau1,
-   input signed [33:0] tau2,		 
-   input signed [33:0] tau3,
-   output reg signed [83:0] posx,
-   output reg signed [83:0] posy, 
-   output [23:0] testing
-		 
-		 
+   input signed [34:0] tau1,
+   input signed [34:0] tau2,		 
+   input signed [34:0] tau3,
+   output reg signed [90:0] posx,
+   output reg signed [90:0] posy
+		 		 
 		 
 );
    
-   localparam [31:0] x1 = $floor(0.08*16777216);
-   localparam [31:0] y1 = $floor(0.16*16777216);
-   localparam [31:0] x2 = $floor(0.16*16777216);
-   localparam [31:0] y2 = $floor(0.16*16777216);
-   localparam [31:0] x3 = $floor(0.16*16777216);
-   localparam [31:0] y3 = 0;
+   localparam [32:0] x1 = $floor(0.08*33554432);
+   localparam [32:0] y1 = $floor(0.16*33554432);
+   localparam [32:0] x2 = $floor(0.16*33554432);
+   localparam [32:0] y2 = $floor(0.16*33554432);
+   localparam [32:0] x3 = $floor(0.16*33554432);
+   localparam [32:0] y3 = 0;
    localparam [24:0] v  = $floor(340.3);
 
    //not sure if these are supposed to be signed ???????????????????????????????????
    
-   wire signed [67:0] 	    A2;
-   wire signed [67:0] 	    A3;
-   wire signed [67:0] 	    B2;
-   wire signed [67:0] 	    B3;
-   wire signed [151:0] 	    C2;
-   wire signed [151:0] 	    C3;
+   wire signed [69:0] 	    A2;
+   wire signed [69:0] 	    A3;
+   wire signed [69:0] 	    B2;
+   wire signed [69:0] 	    B3;
+   wire signed [152:0] 	    C2;
+   wire signed [152:0] 	    C3;
 
-   wire signed [219:0] 	    numx;
-   wire signed [219:0] 	    numy;
-   wire signed [135:0] 	    denom;
+   wire signed [222:0] 	    numx;
+   wire signed [222:0] 	    numy;
+   wire signed [139:0] 	    denom;
    
    assign testing = 2*x1*tau2;
 
-   wire [67:0] 		    a2_1, a2_2, a2_3, a2_4, a2_5, a2_6, a2_7;
-   wire [67:0] 		    a3_1, a3_2, a3_3, a3_4, a3_5, a3_6, a3_7;
-   wire [67:0] 		    b2_1, b2_2, b2_3, b2_4, b2_5, b2_6, b2_7;
-   wire [67:0] 		    b3_1, b3_2, b3_3, b3_4, b3_5, b3_6, b3_7;
+   wire [69:0] 		    a2_1, a2_2, a2_3, a2_4, a2_5, a2_6, a2_7;
+   wire [69:0] 		    a3_1, a3_2, a3_3, a3_4, a3_5, a3_6, a3_7;
+   wire [69:0] 		    b2_1, b2_2, b2_3, b2_4, b2_5, b2_6, b2_7;
+   wire [69:0] 		    b3_1, b3_2, b3_3, b3_4, b3_5, b3_6, b3_7;
    
    assign a2_1 = $signed(2*x2);
    assign a2_2 = $signed(tau1);
@@ -90,8 +88,8 @@ module localizer_2(
    // B2 $signed($signed(2*y2)*$signed(tau1)) - $signed($signed(2*y1)*$signed(tau2));
    // B3 $signed($signed(2*y3)*$signed(tau1)) - $signed($signed(2*y1)*$signed(tau3));
 
-   wire [151:0]      c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17;
-   wire [151:0]      d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17;
+   wire [222:0]      c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17;
+   wire [222:0]      d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17;
 
    assign c1 =  $signed(v**2)*$signed(tau2)*$signed(tau1); 
    assign c2 =  $signed($signed(tau2) - $signed(tau1));
@@ -137,8 +135,8 @@ module localizer_2(
    assign denom = $signed($signed(A2)*$signed(B3) - $signed(A3)*$signed(B2)); 
 
 
-   wire [83:0] tempx;
-   wire [83:0] tempy;
+   wire [90:0] tempx;
+   wire [90:0] tempy;
    
    assign tempx = $signed(numx)/$signed(denom);  // 24-bit fixed point; 8 bits int, 16 bits frac
    assign tempy = $signed(numy)/$signed(denom);
